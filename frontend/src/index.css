@@ -1,0 +1,404 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-100 text-slate-900;
+  background-image: radial-gradient(circle at 10% 20%, rgba(2, 132, 199, 0.08), transparent 30%),
+    radial-gradient(circle at 90% 0%, rgba(217, 119, 6, 0.1), transparent 35%);
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-100;
+  background-image: radial-gradient(circle at 10% 20%, rgba(14, 116, 144, 0.24), transparent 30%),
+    radial-gradient(circle at 90% 0%, rgba(180, 83, 9, 0.24), transparent 35%);
+}
+
+.card-skeleton {
+  @apply animate-pulse bg-slate-200 dark:bg-slate-800 h-28 rounded-xl;
+}
+
+.site-header {
+  @apply bg-gradient-to-r from-brand-700 via-brand-600 to-accent-600 text-white;
+}
+
+.nav-link {
+  @apply px-3 py-1 rounded;
+  transition: background-color 150ms, transform 150ms;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.hero-panel {
+  @apply p-6 rounded-2xl text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4;
+  background: linear-gradient(130deg, #0f766e 0%, #0284c7 45%, #b45309 100%);
+}
+
+.hero-btn {
+  @apply px-4 py-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors;
+}
+
+.btn-primary {
+  @apply px-4 py-2 rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 transition-all shadow-sm hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 transition-all disabled:opacity-70 disabled:cursor-not-allowed;
+}
+
+.card-panel {
+  @apply bg-white dark:bg-slate-900 rounded-2xl p-4 md:p-5 shadow border border-slate-200 dark:border-slate-800;
+}
+
+.stat-card {
+  @apply bg-white dark:bg-slate-900 rounded-xl p-4 shadow border border-slate-200 dark:border-slate-800;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.96));
+}
+
+.stat-label {
+  @apply text-sm text-slate-600 dark:text-slate-400;
+}
+
+.stat-value {
+  @apply text-2xl font-bold mt-1;
+}
+
+.stat-subvalue {
+  @apply text-xs text-slate-500 mt-2;
+}
+
+.stat-card-featured {
+  @apply relative overflow-hidden;
+  background-image: linear-gradient(135deg, rgba(8, 145, 178, 0.14), rgba(249, 115, 22, 0.12));
+}
+
+.input-field {
+  @apply border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2 rounded-lg;
+}
+
+.crypto-card {
+  @apply bg-white dark:bg-slate-900 rounded-2xl shadow p-4 border border-slate-200 dark:border-slate-800 transition-transform duration-200;
+  background-image: linear-gradient(160deg, rgba(255,255,255,0.98), rgba(241,245,249,0.94));
+}
+
+.crypto-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 22px 40px -28px rgba(14, 116, 144, 0.65);
+}
+
+.crypto-card-link {
+  @apply inline-flex items-center rounded-full border border-cyan-200 dark:border-cyan-900 bg-cyan-50/80 dark:bg-cyan-950/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700 dark:text-cyan-300;
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseRed {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.price-up {
+  color: #059669;
+  animation: pulseGreen 1s ease-in-out;
+}
+
+.price-down {
+  color: #dc2626;
+  animation: pulseRed 1s ease-in-out;
+}
+
+.mover-row {
+  @apply flex items-center gap-3;
+}
+
+.insight-panel {
+  @apply rounded-2xl p-6 text-white flex flex-col justify-between gap-4;
+  background: linear-gradient(135deg, #155e75 0%, #0f766e 45%, #ea580c 100%);
+}
+
+.insight-badges {
+  @apply flex flex-wrap gap-2;
+}
+
+.insight-chip {
+  @apply rounded-full px-3 py-1 text-xs font-medium bg-white/15 border border-white/10;
+}
+
+.snapshot-row {
+  @apply w-full flex items-center justify-between gap-3 rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-3 transition-all hover:-translate-y-0.5 hover:shadow-sm;
+}
+
+.chart-card {
+  @apply rounded-[28px] border border-cyan-100 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-950/70 p-4 md:p-5;
+  background-image: linear-gradient(180deg, rgba(240, 249, 255, 0.95), rgba(248, 250, 252, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.dark .chart-card {
+  background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(2, 6, 23, 0.88));
+  box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.06);
+}
+
+.chart-surface {
+  @apply rounded-[24px] border border-white/70 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 p-2 md:p-3 overflow-hidden;
+  background-image: radial-gradient(circle at top, rgba(34, 211, 238, 0.12), transparent 48%);
+}
+
+.chart-mini-stat {
+  @apply rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 px-3 py-3;
+}
+
+.chart-mini-label {
+  @apply text-[11px] uppercase tracking-[0.18em] text-slate-500;
+}
+
+.chart-mini-value {
+  @apply mt-2 text-sm font-semibold text-slate-900 dark:text-white;
+}
+
+.chart-time-btn {
+  @apply rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/90 px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-slate-500 transition-all;
+}
+
+.chart-time-btn:hover {
+  @apply border-cyan-300 text-cyan-700 dark:border-cyan-700 dark:text-cyan-300;
+}
+
+.chart-time-btn-active {
+  @apply border-transparent bg-slate-900 text-white dark:bg-cyan-500 dark:text-slate-950 shadow-sm;
+}
+
+.chart-axis {
+  @apply mt-3 flex items-center justify-between text-xs uppercase tracking-[0.16em] text-slate-500;
+}
+
+.chart-footer {
+  @apply mt-3 flex items-center justify-end;
+}
+
+.chart-footer-pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 px-3 py-2 text-xs text-slate-600 dark:text-slate-300;
+}
+
+.chart-dot {
+  @apply h-2.5 w-2.5 rounded-full inline-block;
+}
+
+.chart-empty {
+  @apply rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 px-4 py-10 text-sm text-slate-500 text-center;
+}
+
+.detail-stat {
+  @apply rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 py-4;
+}
+
+.detail-stat-label {
+  @apply text-xs uppercase tracking-[0.16em] text-slate-500;
+}
+
+.detail-stat-value {
+  @apply mt-2 text-lg font-semibold text-slate-900 dark:text-white break-words;
+}
+
+.coin-detail-modal {
+  @apply relative bg-white/95 dark:bg-slate-900/95 rounded-[28px] shadow-2xl max-w-6xl w-full p-6 md:p-7 z-10 border border-white/60 dark:border-slate-700/70 backdrop-blur;
+  background-image: radial-gradient(circle at top right, rgba(34, 211, 238, 0.12), transparent 28%),
+    radial-gradient(circle at top left, rgba(249, 115, 22, 0.12), transparent 24%);
+}
+
+.auth-form-card {
+  @apply bg-white/90 dark:bg-slate-900 rounded-[28px] p-6 md:p-8 shadow-xl border border-white/60 dark:border-slate-800 backdrop-blur;
+}
+
+.auth-hero-card {
+  @apply relative overflow-hidden rounded-[32px] p-6 md:p-8 text-white shadow-xl;
+  background: linear-gradient(140deg, #0f766e 0%, #0369a1 48%, #ea580c 100%);
+}
+
+.auth-hero-alt {
+  background: linear-gradient(145deg, #1d4ed8 0%, #0f766e 52%, #f97316 100%);
+}
+
+.auth-glow {
+  position: absolute;
+  inset: auto -10% -25% auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.18);
+  filter: blur(18px);
+}
+
+.auth-eyebrow {
+  @apply text-xs uppercase tracking-[0.28em] text-white/70;
+}
+
+.auth-title {
+  @apply text-3xl md:text-4xl font-semibold mt-3 leading-tight;
+}
+
+.auth-copy {
+  @apply mt-3 text-sm md:text-base text-white/85 max-w-xl;
+}
+
+.auth-feature-grid {
+  @apply mt-6 grid gap-3 sm:grid-cols-2;
+}
+
+.auth-feature-card {
+  @apply rounded-2xl border border-white/15 bg-white/10 backdrop-blur px-4 py-4;
+}
+
+.auth-feature-label {
+  @apply text-xs uppercase tracking-[0.18em] text-white/65;
+}
+
+.auth-feature-value {
+  @apply mt-2 text-sm md:text-base font-medium;
+}
+
+.alert-hero {
+  @apply rounded-[30px] p-5 md:p-8 text-white flex flex-col xl:flex-row xl:items-end xl:justify-between gap-5 md:gap-6;
+  background: linear-gradient(135deg, #0f766e 0%, #0ea5a4 35%, #1d4ed8 100%);
+}
+
+.alert-hero-metrics {
+  @apply grid gap-3 grid-cols-1 sm:grid-cols-3 xl:min-w-[360px];
+}
+
+.alert-hero-card {
+  @apply rounded-2xl border border-white/15 bg-white/10 backdrop-blur px-4 py-4;
+}
+
+.alert-hero-label {
+  @apply text-xs uppercase tracking-[0.18em] text-white/65;
+}
+
+.alert-hero-value {
+  @apply mt-2 text-2xl font-semibold;
+}
+
+.alert-preview-card {
+  @apply rounded-2xl border border-cyan-200/70 dark:border-cyan-800 bg-cyan-50/70 dark:bg-cyan-950/20 p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4;
+}
+
+.workflow-step {
+  @apply flex items-start gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-4 py-4;
+}
+
+.workflow-index {
+  @apply inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm font-semibold;
+}
+
+.alert-item-card {
+  @apply rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm space-y-4;
+}
+
+.alert-meta-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-3 rounded-2xl bg-slate-50 dark:bg-slate-950 px-3 py-3;
+}
+
+.alert-meta-label {
+  @apply text-xs uppercase tracking-[0.16em] text-slate-500;
+}
+
+.alert-meta-value {
+  @apply mt-1 text-sm font-medium text-slate-900 dark:text-white;
+}
+
+.alert-status-pill {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold border;
+}
+
+.alert-status-on {
+  @apply bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-700/50;
+}
+
+.alert-status-off {
+  @apply bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700;
+}
+
+.alert-delete-btn {
+  @apply px-4 py-2 rounded-xl bg-rose-600 text-white hover:bg-rose-700 transition-colors;
+}
+
+.history-row {
+  @apply grid gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 px-4 py-4 items-center;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 640px) {
+  .alert-hero-card,
+  .workflow-step,
+  .alert-item-card,
+  .history-row,
+  .profile-detail-row,
+  .snapshot-row {
+    word-break: break-word;
+  }
+}
+
+.profile-hero {
+  @apply rounded-[30px] p-6 md:p-8 text-white flex flex-col gap-5;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0891b2 45%, #ea580c 100%);
+}
+
+.profile-avatar {
+  @apply h-16 w-16 rounded-2xl bg-white/15 border border-white/15 flex items-center justify-center text-3xl font-semibold;
+}
+
+.profile-hero-badges {
+  @apply flex flex-wrap gap-2;
+}
+
+.profile-detail-row {
+  @apply flex items-center justify-between gap-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-4 py-4;
+}
+
+.profile-detail-label {
+  @apply text-sm text-slate-500;
+}
+
+.profile-detail-value {
+  @apply text-sm font-medium text-slate-900 dark:text-white text-right;
+}
+
+@media (min-width: 768px) {
+  .history-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(120px, 0.7fr) auto;
+  }
+}
+
+.Toastify__toast--success {
+  border-left: 4px solid #059669;
+}
+
+.Toastify__toast--error {
+  border-left: 4px solid #dc2626;
+}
