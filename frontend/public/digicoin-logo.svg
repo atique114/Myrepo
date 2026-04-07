@@ -1,0 +1,19 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="64" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="76" fill="url(#coin)" stroke="rgba(255,255,255,0.25)" stroke-width="10"/>
+  <path d="M128 70L161 88V126C161 148 147 166 128 176C109 166 95 148 95 126V88L128 70Z" fill="#F8FAFC"/>
+  <path d="M128 94L142 101V123C142 134 136 143 128 148C120 143 114 134 114 123V101L128 94Z" fill="#0F766E"/>
+  <path d="M84 182H172" stroke="#F8FAFC" stroke-width="12" stroke-linecap="round"/>
+  <path d="M102 160L118 142L132 151L154 126" stroke="#FB923C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="bg" x1="24" y1="20" x2="230" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E"/>
+      <stop offset="0.55" stop-color="#0284C7"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="coin" x1="76" y1="66" x2="178" y2="186" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#F8FAFC" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+</svg>
